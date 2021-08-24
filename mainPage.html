@@ -47,15 +47,19 @@
     <!--        <tr>-->
     <!--            <td>-->
     <!--                스타일-->
-    <div>
-        <input type="radio" id="basic" name="selection" value = "basic" checked>
-        <label for="basic">basic</label>
-   
-        <input type="radio" id="image" name="selection" value = "image">
-        <label for="image">image</label>
+    <div class="optionbox">
+        <div class="optionbox-left" style="display : inline-block; margin-right: 30px">OPTION</div>
+        <div class="optionbox-right" style="display : inline-block;">
+            
+            <input type="radio" id="basic" name="selection" value = "basic" checked>
+            <label for="basic">basic</label>
     
-        <input type="radio" id="photo" name="selection" value = "photo">
-        <label for="photo">photo</label>
+            <input type="radio" id="image" name="selection" value = "image">
+            <label for="image">image</label>
+        
+            <input type="radio" id="photo" name="selection" value = "photo">
+            <label for="photo">photo</label>
+        </div>
     </div>
         
     
@@ -67,7 +71,7 @@
     <!--            </td>-->
     <!--        </tr>-->
     <!--    </table>-->
-    <button id="download"> 다운로드</button>
+    <!--<button id="download"> 다운로드</button>-->
 
     <script>
         function setThumbnail(event) {
