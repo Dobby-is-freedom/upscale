@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	
+	<link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+	<link rel="stylesheet" href="css/sliderstyle.css" type="text/css">
+</head>
+
+<body>
+	<!--uploader begin-->
+	<input type="file" id="fileElem" multiple accept="image/*" onchange="setThumbnail(event);" />
+	<script>
+		function setThumbnail(event) {
+			var owl = $('.owl-carousel');
+			
+			var count = document.querySelectorAll(".item").length;
+			for (var i = 0; i < count; i++) {
+				owl.trigger('remove.owl.carousel',0);
+			}
+			owl.trigger('refresh.owl.carousel');
+
+			for (var image of event.target.files) {
+				var reader = new FileReader();
+				
+				reader.onload = function (event) {
+					var newimg = document.createElement("img");
+					newimg.setAttribute("src", event.target.result);
+					// newimg.setAttribute("alt", "");
+					var newitem = document.createElement("div");
+					newitem.setAttribute("class", "item");
+					newitem.appendChild(newimg);
+
+					owl.trigger('add.owl.carousel', newitem).trigger('update.owl.carousel').trigger('refresh.owl.carousel');
+				};
+
+				reader.readAsDataURL(image);
+			}
+		}
+	</script>
+	<!--uploader end-->
+
+	<!--thumbnail slider-->
+	<section>
+		<div class="thumbnail-pic">
+			<div id="img_container" class="thumbs owl-carousel"></div>
+		</div>
+	</section>
+	<!--thumbnail slider-->
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
