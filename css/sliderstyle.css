@@ -41,8 +41,6 @@ img {
 .thumbs {
 	left: 50%;
 	max-width: 503px;
-	background: #ffffff;
-	border: 3px solid #ffffff;
 	height: 100px;
 	-webkit-transform: translateX(-251.3px);
 	-ms-transform: translateX(-251.3px);
